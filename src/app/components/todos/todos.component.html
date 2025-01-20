@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <form #form="ngForm" (ngSubmit)="addTodo()">
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" name="description" [(ngModel)]="newTodo.description">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+          <!--   <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div class="row">
+        <h1>My todos</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Created Date</th>
+                <th scope="col">Completed</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let todo of todos">
+                <th [class.stroke]="todo.isCompleted">{{todo.description}}</th>
+                <th >{{todo.createdDate | date:'MM-dd-yyyy hh:mm a'}}</th>
+                <td><input type="checkbox" [checked]="todo.isCompleted"
+                    (change)="onCompletedChange(todo.id ,todo)">
+
+                </td>
+                <td ><a [routerLink]="[]" (click)="DeleteTodoById(todo.id)">Delete</a></td>
+              
+              </tr>
+           
+            </tbody>
+          </table>
+    </div>
+</div>
