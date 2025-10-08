@@ -1,9 +1,25 @@
 export interface Todo {
     id:string,
-    description:string,
+    title: string,
+   
     createdDate:Date,
     isCompleted:boolean,
-    completedDate:Date
+    completedDate:Date,
+    userId: number,
+    department: string,
+    employeeName: string,
+    employeeEmail: string,
+    name:string,
+  
+
+
+   
+
+  
+
+  
+
+
 }
     
    

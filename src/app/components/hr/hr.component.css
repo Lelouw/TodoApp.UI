@@ -1,3 +1,113 @@
+.notifications-container {
+    padding: 10px; /* Reduce padding */
+    max-width: 800px auto;
+    margin: 0; /* Center it */
+    margin-top: -10px; /* Adjust this value to move it higher */
+}
+
+.custom-accordion .card {
+    border: none;
+}
+
+.leave-card, .claim-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px; /* Reduced padding from 15px to 10px */
+    border-radius: 6px; /* Reduced border-radius for a more compact look */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
+    margin-bottom: 5px; /* Reduce spacing between cards */
+    cursor: pointer; /* Makes it clear it's clickable */
+    transition: background 0.3s ease, color 0.3s ease;
+    min-height: 30px; /* Ensure minimum height is smaller */
+}
+
+/* Hover effect - turns green */
+.leave-card:hover, .claim-card:hover {
+    background: #9ADECE !important; /* Light green */
+}
+
+/* Active (clicked) effect */
+.leave-card.active, .claim-card.active {
+    background: #9ADECE !important; /* Bootstrap success green */
+    color: white !important;
+}
+
+.leave-info h4, .claim-info h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.leave-info p, .claim-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.leave-dates, .claim-info {
+    text-align: right;
+}
+
+.leave-dates p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.leave-dates small {
+    color: #777;
+    font-size: 12px;
+}
+
+/* ======= ADDED STYLES FOR THREE-BLOCK LAYOUT & SEPARATOR ======= */
+.leave-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leave-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.leave-info, .leave-dates, .leave-icon {
+    flex: 1; /* Equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Add vertical separators */
+.leave-info, .leave-dates {
+    border-right: 1px solid #ddd; /* Light grey separator */
+    padding-right: auto;
+}
+
+.leave-dates {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.leave-icon {
+    text-align: right;
+    padding-left: 10px;
+    color: hsl(0, 0%, 2%);
+}
+
+/* Ensure icon is visible */
+.leave-icon i {
+    font-size: 18px;
+    color: hsl(0, 0%, 2%);
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .completed{
     text-decoration: line-through;
   

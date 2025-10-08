@@ -1,0 +1,77 @@
+
+
+
+
+  <mat-sidenav-container class="sidenav-container" >
+    <!-- Sidebar -->
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" style="background-color: #1c1c1a; color: white;">
+    
+  
+      <mat-nav-list>
+        <mat-list-item routerLink="/dashboard">
+          <mat-icon>dashboard</mat-icon>
+          <span class="field">Dashboard</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/payroll">
+          <mat-icon>payments</mat-icon>
+          <span class="field">Payroll</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/hr">
+          <mat-icon>supervisor_account</mat-icon>
+          <span class="field">Human Resource Management</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/bee">
+          <mat-icon>business</mat-icon>
+          <span class="field">BEE</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/compliance">
+          <mat-icon>gavel</mat-icon>
+          <span class="field">Compliance</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/employment-equity">
+          <mat-icon>people</mat-icon>
+          <span class="field">Employment Equity</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/health-safety">
+          <mat-icon>health_and_safety</mat-icon>
+          <span class="field">Health & Safety</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/labour-law">
+          <mat-icon>balance</mat-icon>
+          <span class="field">Labour Law</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/learning">
+          <mat-icon>school</mat-icon>
+          <span class="field">Learning</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/bookings">
+          <mat-icon>event</mat-icon>
+          <span class="field">Bookings</span>
+        </mat-list-item> 
+  
+         <mat-list-item routerLink="/settings">
+          <mat-icon>settings</mat-icon>
+          <span class="field">Settings</span>
+        </mat-list-item> 
+      </mat-nav-list>
+  
+      
+
+    </mat-sidenav>
+   
+    <!-- Main Content -->
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  

@@ -1,0 +1,148 @@
+
+<div class="notifications-container">
+    <h2>Notifications</h2>
+  
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel title="Leave requests">
+        <ng-template ngbPanelContent>
+          <div class="leave-container">
+            <div class="leave-card" *ngFor="let leave of leaveRequests">
+              <div class="leave-info">
+                <h4>{{ leave.employeeName }}</h4>
+                
+                <small>{{ leave.employeeNo }}</small>
+              </div>
+              <div class="leave-dates">
+                
+                <p>{{ leave.balance }} days - {{ leave.type}}</p>
+                <small>Available balance {{ leave.balance }} days</small>
+              </div>
+              <div class="leave-dates">
+                <p>{{ leave.startDate | date: 'd MMMM yyyy' }}</p>
+                <small>Returning {{ leave.returnDate | date: 'd MMMM yyyy' }}</small>
+                
+              </div>
+              <div class="leave-icon">
+                <!-- Make the paperclip icon a button -->
+                <button mat-icon-button (click)="openAddTodoDialog(leave)" class="add-leave-button">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+  
+      <ngb-panel title="Claims/Payment Requests (3)">
+        <ng-template ngbPanelContent>
+          <p>Claims data here...</p>
+        </ng-template>
+      </ngb-panel>
+  
+      <ngb-panel title="Performance Appraisals (2)">
+        <ng-template ngbPanelContent>
+          <p>Performance appraisal data here...</p>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+  <div class="row">
+    <div class="col-12" style="position: relative;margin-top: 20px;" >
+      <!-- Add Todo Button -->
+      
+     
+    </div>
+  </div>
+  <!--modal to add leave-->
+<ng-template #leaveRequestDialogTemplate>
+  
+  
+ 
+
+  
+ 
+  <mat-card class="setup-card">
+    
+      <mat-card-title>Leave Request</mat-card-title>
+  
+    <mat-card-content>
+      <form [formGroup]="leaveRequest" (ngSubmit)="submitLeaveRequest()">
+        <!-- First Row: Leave Type + Start Date -->
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <label for="leaveType" class="form-label">Leave Type</label>
+            <input id="leaveType" type="text" formControlName="leaveType" class="form-control" readonly  />
+            
+          </div>
+        
+         
+        </div>
+  
+        <!-- Second Row: End Date + Reason -->
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input id="startDate" type="date" formControlName="startDate" class="form-control" readonly  />
+            
+          </div>
+          <div class="col-md-6 mb-2">
+            <label for="endDate" class="form-label">End Date</label>
+            <input id="endDate" type="date" formControlName="endDate" class="form-control" readonly  />
+         
+          </div>
+        
+      
+        </div>
+      
+        <div class="row">
+        <div class="col-md-6 mb-2">
+          <label for="reason" class="form-label">Reason</label>
+          <textarea id="reason" formControlName="reason" class="form-control" rows="1" readonly ></textarea>
+        </div>
+        
+
+      </div>
+        <div class="row">
+       
+        
+        <!-- File Upload Section -->
+        <div class="mb-2">
+          <label for="attachment" class="form-label">Attached Document </label>
+          <img *ngIf="leaveRequest.value.attachment" [src]="leaveRequest.value.attachment" alt="Uploaded File Preview" />
+          <small class="text-muted">Allowed formats: PDF, DOCX, PNG, JPG</small>
+        </div>
+       
+
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-2">
+          <label for="comment" class="form-label">Comment</label>
+          <textarea id="comment" formControlName="comment" class="form-control" rows="1"></textarea>
+        </div>
+        
+       
+       
+
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <button class="btn btn-outline-danger w-100" type="button" (click)="declineRequest()">
+            Decline
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-success w-100" type="submit" (click)="approveRequest()">
+            Approve
+          </button>
+        </div>
+      </div>
+      
+    
+      </form>
+    </mat-card-content>
+  
+  
+  </mat-card>
+  
+
+</ng-template>

@@ -1,0 +1,26 @@
+.btn-outline-green {
+    color: #9ADECE !important;
+    border-color: #9ADECE !important;
+  }
+  
+  .btn-outline-green:hover {
+    background-color: #9ADECE !important;
+    color: white !important;
+  }
+  .logo {
+    text-align: center;
+   
+    margin: 20px 0;
+  }
+  
+  .logo img {
+    width: 130px;
+  }
+  .footer {
+    background-color: #1c1c1a; /* Match navbar color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #444;
+}

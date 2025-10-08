@@ -1,0 +1,67 @@
+/* Centering both forms */
+.register-container,
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card styling */
+mat-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #9ADECE;
+}
+
+/* Input field styling */
+mat-form-field {
+    width: 100%;
+}
+
+/* Aligning fields in rows for Register Form */
+.row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    flex: 1;
+    min-width: 230px; /* Ensures responsiveness */
+}
+
+/* Button styling */
+.btn-outline-green {
+    width: 100%;
+    color: #9ADECE !important;
+    border: 1px solid #9ADECE !important;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-outline-green:hover {
+    background-color: #9ADECE !important;
+    color: white !important;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Title alignment */
+mat-card-title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom-dialog-container .mat-dialog-container {
+    width: auto !important;
+    max-width: 90vw; /* Prevents it from being too wide */
+    max-height: 90vh; /* Ensures dialog doesn't overflow viewport */
+    border-radius: 20px !important;
+    padding: 30px !important; /* Increased padding */
+    background: white !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Moves content to the top */
+    align-items: center;
+    overflow: hidden; /* Prevents full container overflow */
+    transform: translateY(60%); /* Moves the dialog down */
+}
+
+.custom-dialog-container mat-card {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh; /* Keeps the card within the viewport */
+    overflow: hidden; /* Ensures content stays inside */
+}
+
+.custom-dialog-container mat-card-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Enables scrolling */
+    padding: 16px;
+    max-height: 65vh; /* Adjust height so the form fits */
+}
+
+.custom-dialog-container .button-container {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    background: white;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+  /* Global Snackbar Success Style */
+.success-snackbar {
+    background-color: #4CAF50 !important; /* Green Background */
+    color: white !important; /* White Text */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  /* Fix Close Button Color */
+  .mat-mdc-snack-bar-action {
+    color:  #9ADECE !important;/* Change Close button color */
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  
